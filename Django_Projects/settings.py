@@ -31,9 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Blog.apps.BlogConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
-    'Blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,6 +121,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# this is the directory where theimages will be saved. BASE_DIR specifies the location of the projects base directory
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# this is the public URL of the directory. This is how we can access our media through the browser.
+MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
